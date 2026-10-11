@@ -43,13 +43,16 @@ public class Jeopardy implements ActionListener {
 
 
 	public void run() {
-		JFrame frame = new JFrame();
+		JFrame frame = new JFrame("Jeopardy");
+		JPanel panel = new JPanel();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		quizPanel = new JPanel();
 		frame.setLayout(new BorderLayout());
-
+		panel = createHeader(null);
+		panel.add(quizPanel);
+		frame.add(quizPanel);
 		// 1. Make the frame show up
-
+		
 		// 2. Give your frame a title
 
 		// 3. Create a JPanel variable to hold the header using the createHeader method
@@ -59,9 +62,9 @@ public class Jeopardy implements ActionListener {
 		// 5. Add the quizPanel to the frame
 
 		// 6. Use the createButton method to set the value of firstButton
-
+		firstButton = createButton("Animals");
 		// 7. Add the firstButton to the quizPanel
-
+		quizPanel.add(firstButton);
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 
@@ -86,20 +89,21 @@ public class Jeopardy implements ActionListener {
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height,
 				Toolkit.getDefaultToolkit().getScreenSize().width);
+		frame.setVisible(true);
 	}
 
 
 	private JButton createButton(String dollarAmount) {
 		
 		// Create a new JButton
-
+		JButton wow = new JButton();
 		// Set the text of the button to the dollarAmount
-
+		wow.setText("$100");
 		// Increment the buttonCount (this should make the layout vertical)
-
+		
 		// Return your new button instead of the temporary button
 
-		return new JButton("temporary button");
+		return new JButton();
 	}
 
 	@Override
